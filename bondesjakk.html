@@ -244,6 +244,10 @@
             }
         }
 
+
+        //kode som kjøres...
+        //const myTimeout = setTimeout(function() {}, 1000);
+
         function sjekkVinner() {
             var rundenVunnet = false;
             //Vi må sjekke etter vinner for hver brikke som plasseres på brettet.
@@ -272,6 +276,7 @@
                 }
             }
 
+
             //Hvis runden er vunnet, skal vi gjøre noen handlinger:
             if(rundenVunnet === true) {
                 //Skriv ut hvilken spiller som har vunnet
@@ -279,7 +284,7 @@
 
 
 
-                
+
                 //riktig???? idk
                 document.getElementById("playerturn").style.backgroundColor = "#FFD700"
 
@@ -317,3 +322,8 @@
 </body>
 
 </html>
+
+
+
+//kode som kjøres...
+const myTimeout = setTimeout(function() {}, 1000);
