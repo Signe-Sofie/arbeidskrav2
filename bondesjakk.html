@@ -279,13 +279,11 @@
 
             //Hvis runden er vunnet, skal vi gjøre noen handlinger:
             if(rundenVunnet === true) {
+                //legger inn 1 sekund timeout før det vises at noen vinner, w3School + prøve og feile
+                setTimeout(function() {
                 //Skriv ut hvilken spiller som har vunnet
                 document.getElementById("playerturn").innerHTML = "Spiller " + player + " har vunnet!";
-
-
-
-
-                //riktig???? idk
+                //endre farge på id dersom en spiller har vunnet spillet
                 document.getElementById("playerturn").style.backgroundColor = "#FFD700"
 
                 //Gjør restart spill-knappen synlig
@@ -293,6 +291,7 @@
                 //Sett spillstatus til false, slik at ingen spillere får plassere
                 //flere brikker på brettet - dette løses med sjekken i funksjonen spill()
                 spillStatus = false;
+                }, 1000);
             }
         }
 
@@ -317,6 +316,7 @@
             playermark = "X";
             // 4)
             document.getElementById("playerturn").innerHTML = 'Spiller <span id="player">1</span> (<span id="playermark">X</span>) sin tur:';
+            document.getElementById("playerturn").style.backgroundColor = "#ccc";
         }
     </script>
 </body>
@@ -324,6 +324,3 @@
 </html>
 
 
-
-//kode som kjøres...
-const myTimeout = setTimeout(function() {}, 1000);
