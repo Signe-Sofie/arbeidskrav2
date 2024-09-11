@@ -67,6 +67,15 @@
             color: white;
             cursor: pointer;
         }
+        #gameplayed {
+            max-width: 100px;
+            max-height: 100px;
+            border: 5px solid;
+            text-align: center;
+            font-size: 2rem;
+            
+        }
+       
     </style>
 
 </head>
@@ -85,6 +94,9 @@
         <div id="celle8" class="celle"></div>
     </section>
     <button id="newgame" onclick="restartGame()">Start spill på nytt</button>
+    <section id="gameplayed">
+        <p id="runder"></p>
+    </section>
 
     <script>
         /* For å forstå hvorfor vi har celle-IDene 0 - 8 i HTML-koden over:
@@ -285,15 +297,19 @@
                 document.getElementById("playerturn").innerHTML = "Spiller " + player + " har vunnet!";
                 //endre farge på id dersom en spiller har vunnet spillet
                 document.getElementById("playerturn").style.backgroundColor = "#FFD700"
-
+                
                 //Gjør restart spill-knappen synlig
                 document.getElementById("newgame").style.display = "block";
+                document.getElementById("celle"+vinnerKomboPlass1).style.color = "#FFD700"
+                document.getElementById("celle"+vinnerKomboPlass2).style.color = "#FFD700"
+                document.getElementById("celle"+vinnerKomboPlass3).style.color = "#FFD700"
                 //Sett spillstatus til false, slik at ingen spillere får plassere
                 //flere brikker på brettet - dette løses med sjekken i funksjonen spill()
                 spillStatus = false;
                 }, 1000);
             }
         }
+
 
         //Når et spill er avsluttet, og et nytt skal begynne, må vi gjøre klar en del ting:
         // 1) Fjerne brikkene som er plassert på brettet - både i grensesnittet og i programmet vårt
@@ -307,6 +323,7 @@
             var celleteller = 0;
             while (celleteller < 9) {
                 document.getElementById("celle" + celleteller).innerHTML = "";
+                document.getElementById("celle" + celleteller).style.color = "#fff"
                 celleteller++;
             }
             // 2)
@@ -317,7 +334,25 @@
             // 4)
             document.getElementById("playerturn").innerHTML = 'Spiller <span id="player">1</span> (<span id="playermark">X</span>) sin tur:';
             document.getElementById("playerturn").style.backgroundColor = "#ccc";
+            
+
+           var antallRunder = 0;
+           function restartGame () {
+            antallRunder++;
+
+            spillerBrikker = ["","","","","","","","",""];
+            for (var i = 0; i < 0; i++) {
+                document.getElementById("celle" + i).innerHTML = "";
+                document.getElementById("celle" + i).style.backgroundColor = "";
+            }
+
+            document.getElementById("playerturn").innerHTML = 'Runde: ' + antallRunder + '<br>Spiller 1 (X) sin tur:';
+
+            
+           }
+           
         }
+
     </script>
 </body>
 
