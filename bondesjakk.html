@@ -318,6 +318,8 @@
         // 3) Sette turen til spiller en og spillersymbolet til X
         // 4) Fjerne melding om vinner eller uavgjort, og oppdatere med spillers tur-tekst
         //Dette samler vi i en funksjon, slik at vi kan kalle funksjonen og utføre alle disse tingene når vi trenger det:
+        //her er det laget en antall spillrunder-teller
+        let antallrunder = 0
         function restartGame() {
             // 1)
             spillerBrikker = ["","","","","","","","",""];
@@ -335,23 +337,11 @@
             // 4)
             document.getElementById("playerturn").innerHTML = 'Spiller <span id="player">1</span> (<span id="playermark">X</span>) sin tur:';
             document.getElementById("playerturn").style.backgroundColor = "#ccc";
+
+            antallrunder++
+            document.getElementById("runder").innerHTML = antallrunder
             
 
-           var antallRunder = 0;
-           function restartGame () {
-            antallRunder++;
-
-            spillerBrikker = ["","","","","","","","",""];
-            for (var i = 0; i < 0; i++) {
-                document.getElementById("celle" + i).innerHTML = "";
-                document.getElementById("celle" + i).style.backgroundColor = "";
-            }
-
-            document.getElementById("playerturn").innerHTML = 'Runde: ' + antallRunder + '<br>Spiller 1 (X) sin tur:';
-
-            
-           }
-           
         }
 
     </script>
