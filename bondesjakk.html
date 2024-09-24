@@ -231,6 +231,7 @@
         //datamaskinen må gå gjennom for å sjekke om ruten er ledig, og om den er det plassere
         //riktig spillerbrikke i ruten avhengig av hvilken spiller det er som klikker på ruten:
         function spill(celle) {
+
             //Hvis spillstatus er true, er det lov å spille, og vi kan gjennomføre spillerhandlinger
             if(spillStatus === true) {
                 //Er cellen ledig? Vi må sjekke hvilken celle som er trykket på,
@@ -328,10 +329,11 @@
 
             //Hvis runden er vunnet, skal vi gjøre noen handlinger:
             if(rundenVunnet === true) {
+                var test = player
                 //legger inn 1 sekund timeout før det vises at noen vinner, w3School + prøve og feile
                 setTimeout(function() {
                 //Skriv ut hvilken spiller som har vunnet
-                document.getElementById("playerturn").innerHTML = "Spiller " + player + " har vunnet!";
+                document.getElementById("playerturn").innerHTML = "Spiller " + test + " har vunnet!";
                 //endre farge på id dersom en spiller har vunnet spillet
                 document.getElementById("playerturn").style.backgroundColor = "#FFD700"
                 
