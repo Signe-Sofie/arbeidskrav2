@@ -167,7 +167,7 @@
         //trenger vi en oversikt over Spillbrettplasseringer. Disse kan vi lagre i en array, siden vi fra
         //starten av koden så at spillbrettet kan tenkes på som indexer i en array.
         //Vi lager klar en oversikt, en array, med 9 tomme plasseringer vi senere kan fylle med spillervalg.
-        var spillerBrikker = ["","","","","","","","","","","","","","","",];
+        var spillerBrikker = ["","","","","","","","","","","","","","","",""];
 
         //Videre trenger vi å registrere når en spiller klikker på en rute i spillbrettet.
         //Når en spiller klikker på en rute, skal vi få noe til å skje i koden, derfor kaller vi
@@ -341,6 +341,7 @@
                 document.getElementById("celle"+vinnerKomboPlass1).style.color = "#FFD700"
                 document.getElementById("celle"+vinnerKomboPlass2).style.color = "#FFD700"
                 document.getElementById("celle"+vinnerKomboPlass3).style.color = "#FFD700"
+                document.getElementById("celle"+vinnerKomboPlass4).style.color = "#FFD700"
                 //Sett spillstatus til false, slik at ingen spillere får plassere
                 //flere brikker på brettet - dette løses med sjekken i funksjonen spill()
                 spillStatus = false;
@@ -359,9 +360,9 @@
         let antallrunder = 0
         function restartGame() {
             // 1)
-            spillerBrikker = ["","","","","","","","",""];
+            spillerBrikker = ["","","","","","","","","","","","","","","",""];
             var celleteller = 0;
-            while (celleteller < 9) {
+            while (celleteller < 16) {
                 document.getElementById("celle" + celleteller).innerHTML = "";
                 //kode for å få fargen på spillmerker tilbake til vanlig farge
                 //legg til kilde!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
