@@ -92,7 +92,7 @@
         <div id="celle6" class="celle"></div>
         <div id="celle7" class="celle"></div>
         <div id="celle8" class="celle"></div>
-
+        <!--her legger vi til de nye cellene vi trenger for å utvide brettet-->
         <div id="celle9" class="celle"></div>
         <div id="celle10" class="celle"></div>
         <div id="celle11" class="celle"></div>
@@ -158,6 +158,7 @@
             [3, 7, 11, 15],
             [0, 5, 10, 15],
             [3, 6, 9, 12]
+            //flere/endrede winning combos
         ];
         //Disse kan vi nå vise til ved å si winningCombos[0]. Variabelen winningCombos[0] inneholder nå en array med verdiene [0, 1, 2].
         //Viser vi til winningCombos[0][1] viser vi til index 1 i den første arrayen på nivå 2. Den innholder verdien 1. Denne verdien
@@ -224,6 +225,7 @@
         document.getElementById("celle15").addEventListener("click", function() {
             spill(15);
         });
+        //nok en gang så må det her legges til flere da spillet er blitt utvidet
 
         
 
@@ -294,7 +296,7 @@
 
 
         //kode som kjøres...
-        //const myTimeout = setTimeout(function() {}, 1000);
+       
 
         function sjekkVinner() {
             var rundenVunnet = false;
@@ -339,7 +341,8 @@
                 
                 //Gjør restart spill-knappen synlig
                 document.getElementById("newgame").style.display = "block";
-                //legg til kilde !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                //takk til w3school og webtricks for all hjelpen dere har gitt meg, og Hanna Sørum som ba meg ta meg sammen da jeg ble frustrert over hvor dårlig det gikk
+                //vi klarte det sammen Hanna!
                 document.getElementById("celle"+vinnerKomboPlass1).style.color = "#FFD700"
                 document.getElementById("celle"+vinnerKomboPlass2).style.color = "#FFD700"
                 document.getElementById("celle"+vinnerKomboPlass3).style.color = "#FFD700"
@@ -367,7 +370,7 @@
             while (celleteller < 16) {
                 document.getElementById("celle" + celleteller).innerHTML = "";
                 //kode for å få fargen på spillmerker tilbake til vanlig farge
-                //legg til kilde!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                //takk til w3school og mye prøving
                 document.getElementById("celle" + celleteller).style.color = "#fff"
                 celleteller++;
             }
@@ -386,7 +389,7 @@
             
 
         }
-
+        //jeg er ferdig, håper dette var gøy for dere, for det var ikke så gøy for meg
     </script>
 </body>
 
